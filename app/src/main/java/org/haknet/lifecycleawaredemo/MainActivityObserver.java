@@ -1,6 +1,15 @@
 package org.haknet.lifecycleawaredemo;
 
-import androidx.lifecycle.LifecycleObserver;
+import android.util.Log;
 
-public class MainActivityObserver implements LifecycleObserver {
+import androidx.annotation.NonNull;
+import androidx.lifecycle.DefaultLifecycleObserver;
+import androidx.lifecycle.LifecycleOwner;
+
+public class MainActivityObserver implements DefaultLifecycleObserver {
+    private static final String TAG = MainActivityObserver.class.getSimpleName();
+    @Override
+    public void onCreate(@NonNull LifecycleOwner owner) {
+        Log.i(TAG, "Observer ON_CREATE");
+    }
 }
